@@ -57,9 +57,25 @@
 		F722765A1E67CE8B00BF90F2 /* ESchoolBagLocalServer */ = {
 			isa = PBXGroup;
 			children = (
+				F72276621E67CF9B00BF90F2 /* Base */,
+				F72276631E67CF9B00BF90F2 /* Main */,
 				F722765B1E67CE8B00BF90F2 /* main.m */,
 			);
 			path = ESchoolBagLocalServer;
+			sourceTree = "<group>";
+		};
+		F72276621E67CF9B00BF90F2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F72276631E67CF9B00BF90F2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +265,7 @@
 				F72276611E67CE8B00BF90F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
