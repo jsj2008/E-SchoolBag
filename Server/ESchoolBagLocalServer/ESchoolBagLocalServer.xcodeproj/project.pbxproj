@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F72275E01E67C8D800BF90F2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F72275DF1E67C8D800BF90F2 /* main.c */; };
+		F722765C1E67CE8B00BF90F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F722765B1E67CE8B00BF90F2 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F72275DA1E67C8D800BF90F2 /* CopyFiles */ = {
+		F72276561E67CE8B00BF90F2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F72275DC1E67C8D800BF90F2 /* ESchoolBagServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ESchoolBagServer; sourceTree = BUILT_PRODUCTS_DIR; };
-		F72275DF1E67C8D800BF90F2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		F72276581E67CE8B00BF90F2 /* ESchoolBagLocalServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ESchoolBagLocalServer; sourceTree = BUILT_PRODUCTS_DIR; };
+		F722765B1E67CE8B00BF90F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F72275D91E67C8D800BF90F2 /* Frameworks */ = {
+		F72276551E67CE8B00BF90F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,96 +38,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F72275D31E67C8D800BF90F2 = {
+		F722764F1E67CE8B00BF90F2 = {
 			isa = PBXGroup;
 			children = (
-				F72275DE1E67C8D800BF90F2 /* ESchoolBagServer */,
-				F72275DD1E67C8D800BF90F2 /* Products */,
+				F722765A1E67CE8B00BF90F2 /* ESchoolBagLocalServer */,
+				F72276591E67CE8B00BF90F2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F72275DD1E67C8D800BF90F2 /* Products */ = {
+		F72276591E67CE8B00BF90F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F72275DC1E67C8D800BF90F2 /* ESchoolBagServer */,
+				F72276581E67CE8B00BF90F2 /* ESchoolBagLocalServer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F72275DE1E67C8D800BF90F2 /* ESchoolBagServer */ = {
+		F722765A1E67CE8B00BF90F2 /* ESchoolBagLocalServer */ = {
 			isa = PBXGroup;
 			children = (
-				F72275DF1E67C8D800BF90F2 /* main.c */,
+				F722765B1E67CE8B00BF90F2 /* main.m */,
 			);
-			path = ESchoolBagServer;
+			path = ESchoolBagLocalServer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F72275DB1E67C8D800BF90F2 /* ESchoolBagServer */ = {
+		F72276571E67CE8B00BF90F2 /* ESchoolBagLocalServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F72275E31E67C8D800BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagServer" */;
+			buildConfigurationList = F722765F1E67CE8B00BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagLocalServer" */;
 			buildPhases = (
-				F72275D81E67C8D800BF90F2 /* Sources */,
-				F72275D91E67C8D800BF90F2 /* Frameworks */,
-				F72275DA1E67C8D800BF90F2 /* CopyFiles */,
+				F72276541E67CE8B00BF90F2 /* Sources */,
+				F72276551E67CE8B00BF90F2 /* Frameworks */,
+				F72276561E67CE8B00BF90F2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ESchoolBagServer;
-			productName = ESchoolBagServer;
-			productReference = F72275DC1E67C8D800BF90F2 /* ESchoolBagServer */;
+			name = ESchoolBagLocalServer;
+			productName = ESchoolBagLocalServer;
+			productReference = F72276581E67CE8B00BF90F2 /* ESchoolBagLocalServer */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F72275D41E67C8D800BF90F2 /* Project object */ = {
+		F72276501E67CE8B00BF90F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = 23;
 				TargetAttributes = {
-					F72275DB1E67C8D800BF90F2 = {
+					F72276571E67CE8B00BF90F2 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 4683DBG5A6;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = F72275D71E67C8D800BF90F2 /* Build configuration list for PBXProject "ESchoolBagServer" */;
+			buildConfigurationList = F72276531E67CE8B00BF90F2 /* Build configuration list for PBXProject "ESchoolBagLocalServer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F72275D31E67C8D800BF90F2;
-			productRefGroup = F72275DD1E67C8D800BF90F2 /* Products */;
+			mainGroup = F722764F1E67CE8B00BF90F2;
+			productRefGroup = F72276591E67CE8B00BF90F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F72275DB1E67C8D800BF90F2 /* ESchoolBagServer */,
+				F72276571E67CE8B00BF90F2 /* ESchoolBagLocalServer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F72275D81E67C8D800BF90F2 /* Sources */ = {
+		F72276541E67CE8B00BF90F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72275E01E67C8D800BF90F2 /* main.c in Sources */,
+				F722765C1E67CE8B00BF90F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F72275E11E67C8D800BF90F2 /* Debug */ = {
+		F722765D1E67CE8B00BF90F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -174,7 +174,7 @@
 			};
 			name = Debug;
 		};
-		F72275E21E67C8D800BF90F2 /* Release */ = {
+		F722765E1E67CE8B00BF90F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -214,7 +214,7 @@
 			};
 			name = Release;
 		};
-		F72275E41E67C8D800BF90F2 /* Debug */ = {
+		F72276601E67CE8B00BF90F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4683DBG5A6;
@@ -222,7 +222,7 @@
 			};
 			name = Debug;
 		};
-		F72275E51E67C8D800BF90F2 /* Release */ = {
+		F72276611E67CE8B00BF90F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4683DBG5A6;
@@ -233,24 +233,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F72275D71E67C8D800BF90F2 /* Build configuration list for PBXProject "ESchoolBagServer" */ = {
+		F72276531E67CE8B00BF90F2 /* Build configuration list for PBXProject "ESchoolBagLocalServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F72275E11E67C8D800BF90F2 /* Debug */,
-				F72275E21E67C8D800BF90F2 /* Release */,
+				F722765D1E67CE8B00BF90F2 /* Debug */,
+				F722765E1E67CE8B00BF90F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F72275E31E67C8D800BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagServer" */ = {
+		F722765F1E67CE8B00BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagLocalServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F72275E41E67C8D800BF90F2 /* Debug */,
-				F72275E51E67C8D800BF90F2 /* Release */,
+				F72276601E67CE8B00BF90F2 /* Debug */,
+				F72276611E67CE8B00BF90F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F72275D41E67C8D800BF90F2 /* Project object */;
+	rootObject = F72276501E67CE8B00BF90F2 /* Project object */;
 }
