@@ -7,25 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F72275A41E67C30700BF90F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72275A31E67C30700BF90F2 /* AppDelegate.swift */; };
-		F72275A61E67C30700BF90F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72275A51E67C30700BF90F2 /* ViewController.swift */; };
-		F72275A91E67C30700BF90F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72275A71E67C30700BF90F2 /* Main.storyboard */; };
-		F72275AB1E67C30700BF90F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72275AA1E67C30700BF90F2 /* Assets.xcassets */; };
-		F72275AE1E67C30700BF90F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72275AC1E67C30700BF90F2 /* LaunchScreen.storyboard */; };
+		F72275E01E67C8D800BF90F2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F72275DF1E67C8D800BF90F2 /* main.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F72275DA1E67C8D800BF90F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		F72275A01E67C30700BF90F2 /* ESchoolBagServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESchoolBagServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F72275A31E67C30700BF90F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F72275A51E67C30700BF90F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F72275A81E67C30700BF90F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F72275AA1E67C30700BF90F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F72275AD1E67C30700BF90F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F72275AF1E67C30700BF90F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F72275DC1E67C8D800BF90F2 /* ESchoolBagServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ESchoolBagServer; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72275DF1E67C8D800BF90F2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F722759D1E67C30700BF90F2 /* Frameworks */ = {
+		F72275D91E67C8D800BF90F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,31 +38,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F72275971E67C30700BF90F2 = {
+		F72275D31E67C8D800BF90F2 = {
 			isa = PBXGroup;
 			children = (
-				F72275A21E67C30700BF90F2 /* ESchoolBagServer */,
-				F72275A11E67C30700BF90F2 /* Products */,
+				F72275DE1E67C8D800BF90F2 /* ESchoolBagServer */,
+				F72275DD1E67C8D800BF90F2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F72275A11E67C30700BF90F2 /* Products */ = {
+		F72275DD1E67C8D800BF90F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F72275A01E67C30700BF90F2 /* ESchoolBagServer.app */,
+				F72275DC1E67C8D800BF90F2 /* ESchoolBagServer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F72275A21E67C30700BF90F2 /* ESchoolBagServer */ = {
+		F72275DE1E67C8D800BF90F2 /* ESchoolBagServer */ = {
 			isa = PBXGroup;
 			children = (
-				F72275A31E67C30700BF90F2 /* AppDelegate.swift */,
-				F72275A51E67C30700BF90F2 /* ViewController.swift */,
-				F72275A71E67C30700BF90F2 /* Main.storyboard */,
-				F72275AA1E67C30700BF90F2 /* Assets.xcassets */,
-				F72275AC1E67C30700BF90F2 /* LaunchScreen.storyboard */,
-				F72275AF1E67C30700BF90F2 /* Info.plist */,
+				F72275DF1E67C8D800BF90F2 /* main.c */,
 			);
 			path = ESchoolBagServer;
 			sourceTree = "<group>";
@@ -67,13 +65,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F722759F1E67C30700BF90F2 /* ESchoolBagServer */ = {
+		F72275DB1E67C8D800BF90F2 /* ESchoolBagServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F72275B21E67C30700BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagServer" */;
+			buildConfigurationList = F72275E31E67C8D800BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagServer" */;
 			buildPhases = (
-				F722759C1E67C30700BF90F2 /* Sources */,
-				F722759D1E67C30700BF90F2 /* Frameworks */,
-				F722759E1E67C30700BF90F2 /* Resources */,
+				F72275D81E67C8D800BF90F2 /* Sources */,
+				F72275D91E67C8D800BF90F2 /* Frameworks */,
+				F72275DA1E67C8D800BF90F2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -81,90 +79,55 @@
 			);
 			name = ESchoolBagServer;
 			productName = ESchoolBagServer;
-			productReference = F72275A01E67C30700BF90F2 /* ESchoolBagServer.app */;
-			productType = "com.apple.product-type.application";
+			productReference = F72275DC1E67C8D800BF90F2 /* ESchoolBagServer */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F72275981E67C30700BF90F2 /* Project object */ = {
+		F72275D41E67C8D800BF90F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = 23;
 				TargetAttributes = {
-					F722759F1E67C30700BF90F2 = {
+					F72275DB1E67C8D800BF90F2 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 4683DBG5A6;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = F722759B1E67C30700BF90F2 /* Build configuration list for PBXProject "ESchoolBagServer" */;
+			buildConfigurationList = F72275D71E67C8D800BF90F2 /* Build configuration list for PBXProject "ESchoolBagServer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = F72275971E67C30700BF90F2;
-			productRefGroup = F72275A11E67C30700BF90F2 /* Products */;
+			mainGroup = F72275D31E67C8D800BF90F2;
+			productRefGroup = F72275DD1E67C8D800BF90F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F722759F1E67C30700BF90F2 /* ESchoolBagServer */,
+				F72275DB1E67C8D800BF90F2 /* ESchoolBagServer */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		F722759E1E67C30700BF90F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F72275AE1E67C30700BF90F2 /* LaunchScreen.storyboard in Resources */,
-				F72275AB1E67C30700BF90F2 /* Assets.xcassets in Resources */,
-				F72275A91E67C30700BF90F2 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		F722759C1E67C30700BF90F2 /* Sources */ = {
+		F72275D81E67C8D800BF90F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72275A61E67C30700BF90F2 /* ViewController.swift in Sources */,
-				F72275A41E67C30700BF90F2 /* AppDelegate.swift in Sources */,
+				F72275E01E67C8D800BF90F2 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		F72275A71E67C30700BF90F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F72275A81E67C30700BF90F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F72275AC1E67C30700BF90F2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F72275AD1E67C30700BF90F2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		F72275B01E67C30700BF90F2 /* Debug */ = {
+		F72275E11E67C8D800BF90F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -185,7 +148,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -204,17 +167,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 2;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		F72275B11E67C30700BF90F2 /* Release */ = {
+		F72275E21E67C8D800BF90F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +195,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -248,62 +208,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = 2;
-				VALIDATE_PRODUCT = YES;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		F72275B31E67C30700BF90F2 /* Debug */ = {
+		F72275E41E67C8D800BF90F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4683DBG5A6;
-				INFOPLIST_FILE = ESchoolBagServer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.kinglian.start.ESchoolBagServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		F72275B41E67C30700BF90F2 /* Release */ = {
+		F72275E51E67C8D800BF90F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4683DBG5A6;
-				INFOPLIST_FILE = ESchoolBagServer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.kinglian.start.ESchoolBagServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F722759B1E67C30700BF90F2 /* Build configuration list for PBXProject "ESchoolBagServer" */ = {
+		F72275D71E67C8D800BF90F2 /* Build configuration list for PBXProject "ESchoolBagServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F72275B01E67C30700BF90F2 /* Debug */,
-				F72275B11E67C30700BF90F2 /* Release */,
+				F72275E11E67C8D800BF90F2 /* Debug */,
+				F72275E21E67C8D800BF90F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F72275B21E67C30700BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagServer" */ = {
+		F72275E31E67C8D800BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F72275B31E67C30700BF90F2 /* Debug */,
-				F72275B41E67C30700BF90F2 /* Release */,
+				F72275E41E67C8D800BF90F2 /* Debug */,
+				F72275E51E67C8D800BF90F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F72275981E67C30700BF90F2 /* Project object */;
+	rootObject = F72275D41E67C8D800BF90F2 /* Project object */;
 }
