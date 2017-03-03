@@ -1,0 +1,32 @@
+//
+//  ESchoolBagLocalServer.pch
+//  ESchoolBagLocalServer
+//
+//  Created by 23 on 2017/3/3.
+//  Copyright © 2017年 23. All rights reserved.
+//
+
+#ifndef ESchoolBagLocalServer_pch
+#define ESchoolBagLocalServer_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* ESchoolBagLocalServer_pch */
+
+
+#pragma mark - 分类头文件
+#import "NSTextView+ESBExtension.h"
+
+
+
+
+#pragma mark - Socket相关
+/**程序监听主端口号*/
+#define ESBListenMainPort "5700"
+
+/**服务器套接字监听的队列*/
+#define ESBListenMainQueueCount 30
+
+
+

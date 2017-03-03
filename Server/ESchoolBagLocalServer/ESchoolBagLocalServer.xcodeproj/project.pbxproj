@@ -10,8 +10,9 @@
 		F72276861E68F9AF00BF90F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276851E68F9AF00BF90F2 /* main.m */; };
 		F722768B1E68F9AF00BF90F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F722768A1E68F9AF00BF90F2 /* Assets.xcassets */; };
 		F722768E1E68F9AF00BF90F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F722768C1E68F9AF00BF90F2 /* Main.storyboard */; };
-		F72276A31E68FAD700BF90F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276991E68FAD700BF90F2 /* ViewController.m */; };
+		F72276A31E68FAD700BF90F2 /* ESBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276991E68FAD700BF90F2 /* ESBHomeViewController.m */; };
 		F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F722769E1E68FAD700BF90F2 /* AppDelegate.m */; };
+		F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276A61E6901C500BF90F2 /* NSTextView+ESBExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,13 @@
 		F722768A1E68F9AF00BF90F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F722768D1E68F9AF00BF90F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F722768F1E68F9AF00BF90F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F72276981E68FAD700BF90F2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F72276991E68FAD700BF90F2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F72276981E68FAD700BF90F2 /* ESBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBHomeViewController.h; sourceTree = "<group>"; };
+		F72276991E68FAD700BF90F2 /* ESBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBHomeViewController.m; sourceTree = "<group>"; };
 		F722769D1E68FAD700BF90F2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F722769E1E68FAD700BF90F2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F72276A51E6901C500BF90F2 /* NSTextView+ESBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+ESBExtension.h"; sourceTree = "<group>"; };
+		F72276A61E6901C500BF90F2 /* NSTextView+ESBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+ESBExtension.m"; sourceTree = "<group>"; };
+		F72276A81E6902FF00BF90F2 /* ESchoolBagLocalServer.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESchoolBagLocalServer.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,8 @@
 		F72276971E68FAD700BF90F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F72276981E68FAD700BF90F2 /* ViewController.h */,
-				F72276991E68FAD700BF90F2 /* ViewController.m */,
+				F72276981E68FAD700BF90F2 /* ESBHomeViewController.h */,
+				F72276991E68FAD700BF90F2 /* ESBHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,6 +125,7 @@
 			children = (
 				F722769D1E68FAD700BF90F2 /* AppDelegate.h */,
 				F722769E1E68FAD700BF90F2 /* AppDelegate.m */,
+				F72276A81E6902FF00BF90F2 /* ESchoolBagLocalServer.pch */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -138,6 +143,8 @@
 		F72276A01E68FAD700BF90F2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F72276A51E6901C500BF90F2 /* NSTextView+ESBExtension.h */,
+				F72276A61E6901C500BF90F2 /* NSTextView+ESBExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -228,9 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72276A31E68FAD700BF90F2 /* ViewController.m in Sources */,
+				F72276A31E68FAD700BF90F2 /* ESBHomeViewController.m in Sources */,
 				F72276861E68F9AF00BF90F2 /* main.m in Sources */,
 				F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */,
+				F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4683DBG5A6;
+				GCC_PREFIX_HEADER = ESchoolBagLocalServer/Classes/Main/ESchoolBagLocalServer.pch;
 				INFOPLIST_FILE = ESchoolBagLocalServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.kinglian.start.ESchoolBagLocalServer;
@@ -354,6 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4683DBG5A6;
+				GCC_PREFIX_HEADER = ESchoolBagLocalServer/Classes/Main/ESchoolBagLocalServer.pch;
 				INFOPLIST_FILE = ESchoolBagLocalServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.kinglian.start.ESchoolBagLocalServer;
