@@ -1,0 +1,21 @@
+//
+//  ESchoolBagStudent.pch
+//  ESchoolBagStudent
+//
+//  Created by 23 on 2017/3/3.
+//  Copyright © 2017年 23. All rights reserved.
+//
+
+#ifndef ESchoolBagStudent_pch
+#define ESchoolBagStudent_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* ESchoolBagStudent_pch */
+
+#pragma mark - Socket相关
+/**服务地址*/
+#define ESBSeverAddress "127.0.0.1"
+/**服务器主监听端口号*/
+#define ESBServerMainPort "5700"

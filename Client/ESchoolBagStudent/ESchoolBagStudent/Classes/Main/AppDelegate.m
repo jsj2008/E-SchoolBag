@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ESBLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //创建主窗口
+    UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    window.rootViewController = [[ESBLoginViewController alloc]init];
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
+    
+    
     return YES;
 }
 

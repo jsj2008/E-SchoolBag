@@ -34,6 +34,9 @@
    int _servSock;
 }
 
+
+#pragma mark - 系统回调方法
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -67,6 +70,7 @@
 
 
 #pragma mark - Socket相关
+/**监听主端口*/
 - (void)listenMainPort
 {
     //告诉系统我们需要哪种类型的地址
@@ -108,7 +112,11 @@
     }
     [self.textView addLogText:@"listen() success"];
     
+    //保存当前的服务器的监听套接字
     _servSock = servSock;
+    
+    //释放资源
+    freeaddrinfo(servAddr);
 }
 
 

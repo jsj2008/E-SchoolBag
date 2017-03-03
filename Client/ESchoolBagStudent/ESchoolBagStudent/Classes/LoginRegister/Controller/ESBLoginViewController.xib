@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ESBLoginViewController">
+            <connections>
+                <outlet property="passwordTextField" destination="nYx-1Y-C1L" id="s5G-yE-I3c"/>
+                <outlet property="usernameTextField" destination="49X-cM-R6I" id="cso-lK-rtf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ZoN-IN-DBH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnO-gG-YOT">
+                    <rect key="frame" x="0.0" y="150" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="49X-cM-R6I">
+                    <rect key="frame" x="30" y="201" width="315" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYx-1Y-C1L">
+                    <rect key="frame" x="30" y="245" width="315" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUG-Gc-7TL">
+                    <rect key="frame" x="172" y="302" width="31" height="30"/>
+                    <state key="normal" title="登录"/>
+                    <connections>
+                        <action selector="loginBtnClick:" destination="-1" eventType="touchUpInside" id="5TQ-9G-Msu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JnO-gG-YOT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="00I-Y6-TFu"/>
+                <constraint firstAttribute="trailing" secondItem="49X-cM-R6I" secondAttribute="trailing" constant="30" id="5zF-Nt-Edz"/>
+                <constraint firstItem="GUG-Gc-7TL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8Ka-a8-ROD"/>
+                <constraint firstItem="nYx-1Y-C1L" firstAttribute="leading" secondItem="49X-cM-R6I" secondAttribute="leading" id="Bqq-mj-7BB"/>
+                <constraint firstAttribute="trailing" secondItem="JnO-gG-YOT" secondAttribute="trailing" id="QnH-ZW-eTZ"/>
+                <constraint firstItem="JnO-gG-YOT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ReO-cb-vuZ"/>
+                <constraint firstItem="nYx-1Y-C1L" firstAttribute="top" secondItem="49X-cM-R6I" secondAttribute="bottom" constant="14" id="TVv-OE-BrS"/>
+                <constraint firstItem="49X-cM-R6I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="WYr-0w-NUo"/>
+                <constraint firstItem="GUG-Gc-7TL" firstAttribute="top" secondItem="nYx-1Y-C1L" secondAttribute="bottom" constant="27" id="ccc-wx-Aui"/>
+                <constraint firstItem="nYx-1Y-C1L" firstAttribute="trailing" secondItem="49X-cM-R6I" secondAttribute="trailing" id="l7Y-eQ-Qtp"/>
+                <constraint firstItem="49X-cM-R6I" firstAttribute="top" secondItem="JnO-gG-YOT" secondAttribute="bottom" constant="30" id="lXY-Hr-bzV"/>
+            </constraints>
+            <point key="canvasLocation" x="-8" y="14"/>
+        </view>
+    </objects>
+</document>

@@ -8,24 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		F72276171E67C92000BF90F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276161E67C92000BF90F2 /* main.m */; };
-		F722761A1E67C92000BF90F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276191E67C92000BF90F2 /* AppDelegate.m */; };
-		F722761D1E67C92000BF90F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F722761C1E67C92000BF90F2 /* ViewController.m */; };
-		F72276201E67C92000BF90F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F722761E1E67C92000BF90F2 /* Main.storyboard */; };
 		F72276221E67C92000BF90F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72276211E67C92000BF90F2 /* Assets.xcassets */; };
 		F72276251E67C92000BF90F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72276231E67C92000BF90F2 /* LaunchScreen.storyboard */; };
+		F72276B51E690C7D00BF90F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276B01E690C7D00BF90F2 /* AppDelegate.m */; };
+		F72276B81E690D1500BF90F2 /* ESBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276B71E690D1500BF90F2 /* ESBHomeViewController.m */; };
+		F72276BF1E690D4500BF90F2 /* ESBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276BE1E690D4500BF90F2 /* ESBLoginViewController.m */; };
+		F72276C51E690DA100BF90F2 /* ESBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276C41E690DA100BF90F2 /* ESBTabViewController.m */; };
+		F72276C71E690F0200BF90F2 /* ESBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72276C61E690F0200BF90F2 /* ESBLoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F72276121E67C92000BF90F2 /* ESchoolBagStudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESchoolBagStudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72276161E67C92000BF90F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F72276181E67C92000BF90F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F72276191E67C92000BF90F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F722761B1E67C92000BF90F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F722761C1E67C92000BF90F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F722761F1E67C92000BF90F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F72276211E67C92000BF90F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F72276241E67C92000BF90F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F72276261E67C92000BF90F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F72276AF1E690C7D00BF90F2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F72276B01E690C7D00BF90F2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F72276B61E690D1500BF90F2 /* ESBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBHomeViewController.h; sourceTree = "<group>"; };
+		F72276B71E690D1500BF90F2 /* ESBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBHomeViewController.m; sourceTree = "<group>"; };
+		F72276BD1E690D4500BF90F2 /* ESBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBLoginViewController.h; sourceTree = "<group>"; };
+		F72276BE1E690D4500BF90F2 /* ESBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBLoginViewController.m; sourceTree = "<group>"; };
+		F72276C31E690DA100BF90F2 /* ESBTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBTabViewController.h; sourceTree = "<group>"; };
+		F72276C41E690DA100BF90F2 /* ESBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBTabViewController.m; sourceTree = "<group>"; };
+		F72276C61E690F0200BF90F2 /* ESBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESBLoginViewController.xib; sourceTree = "<group>"; };
+		F72276C81E69114500BF90F2 /* ESchoolBagStudent.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESchoolBagStudent.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +65,7 @@
 		F72276141E67C92000BF90F2 /* ESchoolBagStudent */ = {
 			isa = PBXGroup;
 			children = (
-				F72276181E67C92000BF90F2 /* AppDelegate.h */,
-				F72276191E67C92000BF90F2 /* AppDelegate.m */,
-				F722761B1E67C92000BF90F2 /* ViewController.h */,
-				F722761C1E67C92000BF90F2 /* ViewController.m */,
-				F722761E1E67C92000BF90F2 /* Main.storyboard */,
-				F72276211E67C92000BF90F2 /* Assets.xcassets */,
-				F72276231E67C92000BF90F2 /* LaunchScreen.storyboard */,
-				F72276261E67C92000BF90F2 /* Info.plist */,
+				F72276A91E690C7D00BF90F2 /* Classes */,
 				F72276151E67C92000BF90F2 /* Supporting Files */,
 			);
 			path = ESchoolBagStudent;
@@ -74,9 +74,157 @@
 		F72276151E67C92000BF90F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F72276211E67C92000BF90F2 /* Assets.xcassets */,
+				F72276231E67C92000BF90F2 /* LaunchScreen.storyboard */,
+				F72276261E67C92000BF90F2 /* Info.plist */,
 				F72276161E67C92000BF90F2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F72276A91E690C7D00BF90F2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F72276B91E690D3900BF90F2 /* LoginRegister */,
+				F72276AA1E690C7D00BF90F2 /* Home */,
+				F72276AE1E690C7D00BF90F2 /* Main */,
+				F72276B11E690C7D00BF90F2 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F72276AA1E690C7D00BF90F2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F72276AB1E690C7D00BF90F2 /* Controller */,
+				F72276AC1E690C7D00BF90F2 /* Model */,
+				F72276AD1E690C7D00BF90F2 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F72276AB1E690C7D00BF90F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F72276B61E690D1500BF90F2 /* ESBHomeViewController.h */,
+				F72276B71E690D1500BF90F2 /* ESBHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F72276AC1E690C7D00BF90F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F72276AD1E690C7D00BF90F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F72276AE1E690C7D00BF90F2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F72276C01E690D7200BF90F2 /* Controller */,
+				F72276C11E690D7200BF90F2 /* Model */,
+				F72276C21E690D7200BF90F2 /* View */,
+				F72276AF1E690C7D00BF90F2 /* AppDelegate.h */,
+				F72276B01E690C7D00BF90F2 /* AppDelegate.m */,
+				F72276C81E69114500BF90F2 /* ESchoolBagStudent.pch */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F72276B11E690C7D00BF90F2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F72276B21E690C7D00BF90F2 /* Category */,
+				F72276B31E690C7D00BF90F2 /* MyTool */,
+				F72276B41E690C7D00BF90F2 /* ThirdTool */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F72276B21E690C7D00BF90F2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F72276B31E690C7D00BF90F2 /* MyTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyTool;
+			sourceTree = "<group>";
+		};
+		F72276B41E690C7D00BF90F2 /* ThirdTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdTool;
+			sourceTree = "<group>";
+		};
+		F72276B91E690D3900BF90F2 /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				F72276BA1E690D3900BF90F2 /* Controller */,
+				F72276BB1E690D3900BF90F2 /* Model */,
+				F72276BC1E690D3900BF90F2 /* View */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		F72276BA1E690D3900BF90F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F72276BD1E690D4500BF90F2 /* ESBLoginViewController.h */,
+				F72276BE1E690D4500BF90F2 /* ESBLoginViewController.m */,
+				F72276C61E690F0200BF90F2 /* ESBLoginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F72276BB1E690D3900BF90F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F72276BC1E690D3900BF90F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F72276C01E690D7200BF90F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F72276C31E690DA100BF90F2 /* ESBTabViewController.h */,
+				F72276C41E690DA100BF90F2 /* ESBTabViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F72276C11E690D7200BF90F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F72276C21E690D7200BF90F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +253,7 @@
 		F722760A1E67C92000BF90F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ESB;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = 23;
 				TargetAttributes = {
@@ -139,8 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F72276251E67C92000BF90F2 /* LaunchScreen.storyboard in Resources */,
+				F72276C71E690F0200BF90F2 /* ESBLoginViewController.xib in Resources */,
 				F72276221E67C92000BF90F2 /* Assets.xcassets in Resources */,
-				F72276201E67C92000BF90F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F722761D1E67C92000BF90F2 /* ViewController.m in Sources */,
-				F722761A1E67C92000BF90F2 /* AppDelegate.m in Sources */,
+				F72276B51E690C7D00BF90F2 /* AppDelegate.m in Sources */,
+				F72276C51E690DA100BF90F2 /* ESBTabViewController.m in Sources */,
+				F72276BF1E690D4500BF90F2 /* ESBLoginViewController.m in Sources */,
+				F72276B81E690D1500BF90F2 /* ESBHomeViewController.m in Sources */,
 				F72276171E67C92000BF90F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,14 +311,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F722761E1E67C92000BF90F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F722761F1E67C92000BF90F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F72276231E67C92000BF90F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -274,10 +417,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4683DBG5A6;
+				GCC_PREFIX_HEADER = ESchoolBagStudent/Classes/Main/ESchoolBagStudent.pch;
 				INFOPLIST_FILE = ESchoolBagStudent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.kinglian.start.ESchoolBagStudent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -286,10 +432,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4683DBG5A6;
+				GCC_PREFIX_HEADER = ESchoolBagStudent/Classes/Main/ESchoolBagStudent.pch;
 				INFOPLIST_FILE = ESchoolBagStudent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.kinglian.start.ESchoolBagStudent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -312,6 +461,7 @@
 				F722762B1E67C92000BF90F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
