@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F72276831E68F9AF00BF90F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276821E68F9AF00BF90F2 /* AppDelegate.m */; };
 		F72276861E68F9AF00BF90F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276851E68F9AF00BF90F2 /* main.m */; };
-		F72276891E68F9AF00BF90F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276881E68F9AF00BF90F2 /* ViewController.m */; };
 		F722768B1E68F9AF00BF90F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F722768A1E68F9AF00BF90F2 /* Assets.xcassets */; };
 		F722768E1E68F9AF00BF90F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F722768C1E68F9AF00BF90F2 /* Main.storyboard */; };
+		F72276A31E68FAD700BF90F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276991E68FAD700BF90F2 /* ViewController.m */; };
+		F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F722769E1E68FAD700BF90F2 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F722767E1E68F9AF00BF90F2 /* ESchoolBagLocalServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESchoolBagLocalServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F72276811E68F9AF00BF90F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F72276821E68F9AF00BF90F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F72276851E68F9AF00BF90F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F72276871E68F9AF00BF90F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F72276881E68F9AF00BF90F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F722768A1E68F9AF00BF90F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F722768D1E68F9AF00BF90F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F722768F1E68F9AF00BF90F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F72276981E68FAD700BF90F2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F72276991E68FAD700BF90F2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F722769D1E68FAD700BF90F2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F722769E1E68FAD700BF90F2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +56,7 @@
 		F72276801E68F9AF00BF90F2 /* ESchoolBagLocalServer */ = {
 			isa = PBXGroup;
 			children = (
-				F72276811E68F9AF00BF90F2 /* AppDelegate.h */,
-				F72276821E68F9AF00BF90F2 /* AppDelegate.m */,
-				F72276871E68F9AF00BF90F2 /* ViewController.h */,
-				F72276881E68F9AF00BF90F2 /* ViewController.m */,
-				F722768A1E68F9AF00BF90F2 /* Assets.xcassets */,
-				F722768C1E68F9AF00BF90F2 /* Main.storyboard */,
-				F722768F1E68F9AF00BF90F2 /* Info.plist */,
+				F72276951E68FAD700BF90F2 /* Classes */,
 				F72276841E68F9AF00BF90F2 /* Supporting Files */,
 			);
 			path = ESchoolBagLocalServer;
@@ -71,9 +65,95 @@
 		F72276841E68F9AF00BF90F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F722768A1E68F9AF00BF90F2 /* Assets.xcassets */,
+				F722768C1E68F9AF00BF90F2 /* Main.storyboard */,
+				F722768F1E68F9AF00BF90F2 /* Info.plist */,
 				F72276851E68F9AF00BF90F2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F72276951E68FAD700BF90F2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F72276961E68FAD700BF90F2 /* Home */,
+				F722769C1E68FAD700BF90F2 /* Main */,
+				F722769F1E68FAD700BF90F2 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F72276961E68FAD700BF90F2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F72276971E68FAD700BF90F2 /* Controller */,
+				F722769A1E68FAD700BF90F2 /* Model */,
+				F722769B1E68FAD700BF90F2 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F72276971E68FAD700BF90F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F72276981E68FAD700BF90F2 /* ViewController.h */,
+				F72276991E68FAD700BF90F2 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F722769A1E68FAD700BF90F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F722769B1E68FAD700BF90F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F722769C1E68FAD700BF90F2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F722769D1E68FAD700BF90F2 /* AppDelegate.h */,
+				F722769E1E68FAD700BF90F2 /* AppDelegate.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F722769F1E68FAD700BF90F2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F72276A01E68FAD700BF90F2 /* Category */,
+				F72276A11E68FAD700BF90F2 /* MyTool */,
+				F72276A21E68FAD700BF90F2 /* ThirdTool */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F72276A01E68FAD700BF90F2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F72276A11E68FAD700BF90F2 /* MyTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyTool;
+			sourceTree = "<group>";
+		};
+		F72276A21E68FAD700BF90F2 /* ThirdTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdTool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +182,7 @@
 		F72276761E68F9AE00BF90F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ESB;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = 23;
 				TargetAttributes = {
@@ -147,9 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72276891E68F9AF00BF90F2 /* ViewController.m in Sources */,
+				F72276A31E68FAD700BF90F2 /* ViewController.m in Sources */,
 				F72276861E68F9AF00BF90F2 /* main.m in Sources */,
-				F72276831E68F9AF00BF90F2 /* AppDelegate.m in Sources */,
+				F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +380,7 @@
 				F72276941E68F9AF00BF90F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
