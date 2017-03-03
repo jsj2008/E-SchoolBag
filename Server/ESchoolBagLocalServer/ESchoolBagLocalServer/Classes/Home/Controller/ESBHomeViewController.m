@@ -7,6 +7,7 @@
 //
 
 #import "ESBHomeViewController.h"
+#import "ESBConnectionSocketModel.h"
 
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -15,15 +16,22 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+#import "ESBDataFramer.h"
+
+
+
+
 
 @interface ESBHomeViewController ()
 
 #pragma mark - 控件相关属性
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 
-
-
-
+#pragma mark - 线程相关属性
+/**主监听线程*/
+@property(nonatomic,strong) NSThread *listenThread;
+/**客户端连接列表*/
+@property(nonatomic,strong) NSMutableArray *connectionList;
 
 @end
 
@@ -31,7 +39,17 @@
 @implementation ESBHomeViewController
 {
 #pragma mark - socket成员变量
-   int _servSock;
+    int _servSock;
+    
+}
+
+#pragma mark - 懒加载
+- (NSMutableArray *)connectionList
+{
+    if (_connectionList == nil) {
+        _connectionList = [NSMutableArray array];
+    }
+    return _connectionList;
 }
 
 
@@ -117,8 +135,117 @@
     
     //释放资源
     freeaddrinfo(servAddr);
+    
+    //开启常驻子线程，用于接收客户端的连接
+    [self acceptClientConnection];
 }
 
+/**开启子线程，用于接收客户端的连接*/
+- (void)acceptClientConnection
+{
+    //开启子线程
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    
+        //保存当前的主监听线程
+        self.listenThread = [NSThread currentThread];
+        
+        //接收客户端的连接
+        while (1) {
+            //--1 客户端信息
+            struct sockaddr_storage clntAddr;
+            socklen_t clntAddrLen = sizeof(clntAddr);
+            //--2 接收连接
+            int clntSock = accept(_servSock, (struct sockaddr *)&clntAddr, &clntAddrLen);
+            if (clntSock < 0) {
+                //回主线程，打印日志
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.textView addLogText:@"客户端连接失败"];
+                });
+                continue;
+            }
+            //--3 打印客户端信息
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //IPV4
+                if (clntAddr.ss_family == AF_INET) {
+                    struct sockaddr_in *clntAddr_in4 = (struct sockaddr_in *)&clntAddr;
+                    const char *printIP = inet_ntoa(clntAddr_in4->sin_addr);
+                    in_port_t port = ntohs(clntAddr_in4->sin_port);
+                    NSString *clintIP = [NSString stringWithUTF8String:printIP];
+                    NSString *message = [NSString stringWithFormat:@"iPv4客户端连接 -- %@:%d",clintIP,port];
+                    [self.textView addLogText:message];
+                }
+                //IPV6
+                else if (clntAddr.ss_family == AF_INET6){
+                    
+                }
+                //Other
+                else{
+                    [self.textView addLogText:@"未知协议族连接接入"];
+                }
+            });
+            //--4 开启子线程，处理数据
+            [self handleClientDataWithSock:(int)clntSock];
+        }
+        
+    });
+}
+
+/**开启子线程，处理客户端的数据*/
+- (void)handleClientDataWithSock:(int)clntSock
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        ESBConnectionSocketModel *connSock = [[ESBConnectionSocketModel alloc]init];
+        connSock.conectSocket = clntSock;
+        connSock.handleThread = [NSThread currentThread];
+        
+        //加锁，加入线程池
+        @synchronized (self) {
+            [self.connectionList addObject:connSock];
+        };
+        
+        //创建一个输入输出流
+        FILE *channel = fdopen(clntSock, "r+");
+        if (channel == nil) {
+            //回主线程打印日志信息
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString *message = [NSString stringWithFormat:@"socket id = %d 创建file流失败 fdopen() failed",clntSock];
+                [self.textView addLogText:message];
+            });
+            return;
+        }
+        
+        //循环接收客户端的数据
+        int mSize;
+        char inBuf[ESBBufferLength];    //用来存储接收到的二进制数据
+        
+        
+        while (1) {
+            
+            char buffer[10000];
+            
+            //接收
+            size_t recvLength = recv(clntSock, buffer, 10000, 0);
+            
+            NSData *data = [NSData dataWithBytes:buffer length:recvLength];
+            
+            NSError *error;
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            
+            NSLog(@"%@",[dict description]);
+         
+            
+        }
+        
+        //客户端主动退出
+        //--1 移除连接列表
+        @synchronized (self) {
+            [self.connectionList removeObject:connSock];
+        };
+        //--2 销毁
+        close(clntSock);
+    });
+}
 
 
 

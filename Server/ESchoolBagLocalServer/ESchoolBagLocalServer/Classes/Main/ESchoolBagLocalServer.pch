@@ -28,5 +28,7 @@
 /**服务器套接字监听的队列*/
 #define ESBListenMainQueueCount 30
 
+/**数据缓存区的最大长度*/
+#define ESBBufferLength INT16_MAX
 
 

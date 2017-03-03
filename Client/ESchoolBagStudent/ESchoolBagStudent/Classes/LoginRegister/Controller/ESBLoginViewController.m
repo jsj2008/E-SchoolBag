@@ -14,7 +14,7 @@
 #include <netdb.h>
 #include <netinet/in.h>
 
-#import <MBProgressHUD.h>
+#import <SVProgressHUD.h>
 
 @interface ESBLoginViewController ()
 
@@ -62,8 +62,40 @@
     struct addrinfo *servAddr;
     int rtnVal = getaddrinfo(ESBSeverAddress, ESBServerMainPort, &addrCritral, &servAddr);
     if (rtnVal != 0) {
-       
+        [SVProgressHUD showErrorWithStatus:@"getaddrinfo() failed"];
+        return;
     }
+    
+    //创建客户端套接字
+    int clntSock = socket(servAddr->ai_family, servAddr->ai_socktype, servAddr->ai_protocol);
+    if (clntSock < 0 ) {
+        [SVProgressHUD showErrorWithStatus:@"socket() failed"];
+        return;
+    }
+    
+    //连接服务器
+    if (connect(clntSock, servAddr->ai_addr, servAddr->ai_addrlen) < 0) {
+        [SVProgressHUD showErrorWithStatus:@"connect() failed"];
+    }
+    
+    
+    //测试
+    NSDictionary *response = @{@"success":@(NO), @"reason":@"wrong password"};
+    //JSON序列化
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:response options:0 error:&error];
+    char *buffer = [jsonData bytes];
+    //发送
+    send(clntSock, buffer, [jsonData length], 0);
+    
+    
+    //编码
+    
+    
+    
+    //成帧发送
+    
+    
     
 }
 
