@@ -14,6 +14,8 @@
 #include <netdb.h>
 #include <netinet/in.h>
 
+#import <MBProgressHUD.h>
+
 @interface ESBLoginViewController ()
 
 /**用户名输入框*/
@@ -48,6 +50,7 @@
 
 - (IBAction)loginBtnClick:(UIButton *)sender {
     
+    
     //告诉系统我们需要哪种类型的地址
     struct addrinfo addrCritral;
     memset(&addrCritral, 0, sizeof(addrCritral));
@@ -59,7 +62,7 @@
     struct addrinfo *servAddr;
     int rtnVal = getaddrinfo(ESBSeverAddress, ESBServerMainPort, &addrCritral, &servAddr);
     if (rtnVal != 0) {
-        
+       
     }
     
 }
