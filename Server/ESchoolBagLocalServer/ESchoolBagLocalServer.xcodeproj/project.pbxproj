@@ -15,10 +15,10 @@
 		F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F722769E1E68FAD700BF90F2 /* AppDelegate.m */; };
 		F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276A61E6901C500BF90F2 /* NSTextView+ESBExtension.m */; };
 		F72276CE1E693FBB00BF90F2 /* ESBConnectionSocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276CD1E693FBB00BF90F2 /* ESBConnectionSocketModel.m */; };
-		F72276DF1E69528F00BF90F2 /* ESBDataFramer.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276DD1E69528F00BF90F2 /* ESBDataFramer.m */; };
-		F72276E21E6958FF00BF90F2 /* ESBMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276E11E6958FF00BF90F2 /* ESBMessageModel.m */; };
-		F72277021E6CF86900BF90F2 /* ESBDataCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277011E6CF86900BF90F2 /* ESBDataCoder.m */; };
-		F72277081E6D34F000BF90F2 /* ESBClientID.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277071E6D34F000BF90F2 /* ESBClientID.m */; };
+		F72277181E6D4AE800BF90F2 /* ESBClientID.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277111E6D4AE800BF90F2 /* ESBClientID.m */; };
+		F72277191E6D4AE800BF90F2 /* ESBDataCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277131E6D4AE800BF90F2 /* ESBDataCoder.m */; };
+		F722771A1E6D4AE800BF90F2 /* ESBDataFramer.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277151E6D4AE800BF90F2 /* ESBDataFramer.m */; };
+		F722771B1E6D4AE800BF90F2 /* ESBMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277171E6D4AE800BF90F2 /* ESBMessageModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,14 +39,14 @@
 		F72276A81E6902FF00BF90F2 /* ESchoolBagLocalServer.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESchoolBagLocalServer.pch; sourceTree = "<group>"; };
 		F72276CC1E693FBB00BF90F2 /* ESBConnectionSocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBConnectionSocketModel.h; sourceTree = "<group>"; };
 		F72276CD1E693FBB00BF90F2 /* ESBConnectionSocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBConnectionSocketModel.m; sourceTree = "<group>"; };
-		F72276DD1E69528F00BF90F2 /* ESBDataFramer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataFramer.m; sourceTree = "<group>"; };
-		F72276DE1E69528F00BF90F2 /* ESBDataFramer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataFramer.h; sourceTree = "<group>"; };
-		F72276E01E6958FF00BF90F2 /* ESBMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBMessageModel.h; sourceTree = "<group>"; };
-		F72276E11E6958FF00BF90F2 /* ESBMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBMessageModel.m; sourceTree = "<group>"; };
-		F72277001E6CF86900BF90F2 /* ESBDataCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataCoder.h; sourceTree = "<group>"; };
-		F72277011E6CF86900BF90F2 /* ESBDataCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataCoder.m; sourceTree = "<group>"; };
-		F72277061E6D34F000BF90F2 /* ESBClientID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBClientID.h; sourceTree = "<group>"; };
-		F72277071E6D34F000BF90F2 /* ESBClientID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBClientID.m; sourceTree = "<group>"; };
+		F72277101E6D4AE800BF90F2 /* ESBClientID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBClientID.h; sourceTree = "<group>"; };
+		F72277111E6D4AE800BF90F2 /* ESBClientID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBClientID.m; sourceTree = "<group>"; };
+		F72277121E6D4AE800BF90F2 /* ESBDataCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataCoder.h; sourceTree = "<group>"; };
+		F72277131E6D4AE800BF90F2 /* ESBDataCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataCoder.m; sourceTree = "<group>"; };
+		F72277141E6D4AE800BF90F2 /* ESBDataFramer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataFramer.h; sourceTree = "<group>"; };
+		F72277151E6D4AE800BF90F2 /* ESBDataFramer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataFramer.m; sourceTree = "<group>"; };
+		F72277161E6D4AE800BF90F2 /* ESBMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBMessageModel.h; sourceTree = "<group>"; };
+		F72277171E6D4AE800BF90F2 /* ESBMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBMessageModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,10 +151,6 @@
 			children = (
 				F72276CC1E693FBB00BF90F2 /* ESBConnectionSocketModel.h */,
 				F72276CD1E693FBB00BF90F2 /* ESBConnectionSocketModel.m */,
-				F72276E01E6958FF00BF90F2 /* ESBMessageModel.h */,
-				F72276E11E6958FF00BF90F2 /* ESBMessageModel.m */,
-				F72277061E6D34F000BF90F2 /* ESBClientID.h */,
-				F72277071E6D34F000BF90F2 /* ESBClientID.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +201,7 @@
 		F72276A21E68FAD700BF90F2 /* ThirdTool */ = {
 			isa = PBXGroup;
 			children = (
+				F722770F1E6D4AE800BF90F2 /* CMTPSocket */,
 			);
 			path = ThirdTool;
 			sourceTree = "<group>";
@@ -212,12 +209,23 @@
 		F72276D31E694CDE00BF90F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F72276DD1E69528F00BF90F2 /* ESBDataFramer.m */,
-				F72276DE1E69528F00BF90F2 /* ESBDataFramer.h */,
-				F72277001E6CF86900BF90F2 /* ESBDataCoder.h */,
-				F72277011E6CF86900BF90F2 /* ESBDataCoder.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F722770F1E6D4AE800BF90F2 /* CMTPSocket */ = {
+			isa = PBXGroup;
+			children = (
+				F72277101E6D4AE800BF90F2 /* ESBClientID.h */,
+				F72277111E6D4AE800BF90F2 /* ESBClientID.m */,
+				F72277121E6D4AE800BF90F2 /* ESBDataCoder.h */,
+				F72277131E6D4AE800BF90F2 /* ESBDataCoder.m */,
+				F72277141E6D4AE800BF90F2 /* ESBDataFramer.h */,
+				F72277151E6D4AE800BF90F2 /* ESBDataFramer.m */,
+				F72277161E6D4AE800BF90F2 /* ESBMessageModel.h */,
+				F72277171E6D4AE800BF90F2 /* ESBMessageModel.m */,
+			);
+			path = CMTPSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,15 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F722771B1E6D4AE800BF90F2 /* ESBMessageModel.m in Sources */,
 				F72276A31E68FAD700BF90F2 /* ESBHomeViewController.m in Sources */,
-				F72276DF1E69528F00BF90F2 /* ESBDataFramer.m in Sources */,
 				F72276861E68F9AF00BF90F2 /* main.m in Sources */,
-				F72277021E6CF86900BF90F2 /* ESBDataCoder.m in Sources */,
+				F72277181E6D4AE800BF90F2 /* ESBClientID.m in Sources */,
+				F722771A1E6D4AE800BF90F2 /* ESBDataFramer.m in Sources */,
+				F72277191E6D4AE800BF90F2 /* ESBDataCoder.m in Sources */,
 				F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */,
 				F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */,
-				F72276E21E6958FF00BF90F2 /* ESBMessageModel.m in Sources */,
 				F72276CE1E693FBB00BF90F2 /* ESBConnectionSocketModel.m in Sources */,
-				F72277081E6D34F000BF90F2 /* ESBClientID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

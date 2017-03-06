@@ -56,25 +56,53 @@
 - (IBAction)loginBtnClick:(UIButton *)sender {
    
 
-    //构造消息
-    ESBMessageModel *message = [[ESBMessageModel alloc]init];
-    message.toUserId = nil;
-    ESBClientID *from = [[ESBClientID alloc]init];
-    from.username = @"chenhua";
-    message.fromUserId = from;
-    message.msgType = ESBMessageTypeControl;
-    message.ctlType = ESBMsgCtlTypeLogin;
-    message.createTime = [[NSDate new] timeIntervalSince1970];
-    message.content = @{@"username":@"chenhua",@"password":@"123456"};
+    [SVProgressHUD showWithStatus:@"登录中..."];
     
-    //编码
-    size_t dataSize;
-    void *buffer = [ESBMessageModel encodeMessage:message length:&dataSize];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        //构造消息
+        ESBMessageModel *message = [[ESBMessageModel alloc]init];
+        message.toUserId = nil;
+        ESBClientID *from = [[ESBClientID alloc]init];
+        from.username = @"chenhua";
+        message.fromUserId = from;
+        message.msgType = ESBMessageTypeControl;
+        message.ctlType = ESBMsgCtlTypeLogin;
+        message.createTime = [[NSDate new] timeIntervalSince1970];
+        message.content = @{@"username":@"chenhua",@"password":@"123456"};
+        
+        //编码
+        size_t dataSize;
+        void *buffer = [ESBMessageModel encodeMessage:message length:&dataSize];
+        
+        
+        //成帧发送
+        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+        FrameLengthSend(buffer, dataSize, fdopen(delegate.clntSock, "r+"));
+        
+        
+        //接收
+        //从指定流中读取数据，并成帧
+        char inBuf[32678];    //用来存储接收到的二进制数据
+        size_t recvBytes = FrameLengthRecv(fdopen(delegate.clntSock, "r+"), inBuf, 32678);
+        
+        //解码
+        if (recvBytes == -1) {
+            return;
+        }
+        ESBMessageModel *response = [ESBMessageModel decodeMessageWithBuffer:inBuf length:recvBytes];
+        
+        if ([[response.content valueForKey:@"result"] boolValue]) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+                
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            });
+        }
+    });
     
     
-    //成帧发送
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    FrameLengthSend(buffer, dataSize, fdopen(delegate.clntSock, "r+"));
+    
     
     
 }

@@ -34,6 +34,10 @@
 /**客户端连接列表*/
 @property(nonatomic,strong) NSMutableArray *connectionList;
 
+
+#pragma mark - 当前客户端和对应的socket缓存池
+@property(nonatomic,strong) NSMutableDictionary *clntSockCachePool;
+
 @end
 
 
@@ -51,6 +55,14 @@
         _connectionList = [NSMutableArray array];
     }
     return _connectionList;
+}
+
+- (NSMutableDictionary *)clntSockCachePool
+{
+    if (_clntSockCachePool == nil) {
+        _clntSockCachePool = [NSMutableDictionary dictionary];
+    }
+    return _clntSockCachePool;
 }
 
 
@@ -229,8 +241,8 @@
             }
             ESBMessageModel *message = [ESBMessageModel decodeMessageWithBuffer:inBuf length:recvBytes];
             
-            //响应客户的数据
-            [self responseClientDataWithMessage:message];
+            //解析消息
+            [self parseMessage:message withSock:clntSock];
 
         }
         
@@ -248,18 +260,133 @@
 
 
 #pragma mark - 数据处理相关
-/**响应客户端数据*/
-- (void)responseClientDataWithMessage:(ESBMessageModel *)message
+/**解析消息*/
+- (void)parseMessage:(ESBMessageModel *)message withSock:(int )sock
 {
-    NSLog(@"%@",[message description]);
+    //取出客户端ID
+    @synchronized (self) {
+        self.clntSockCachePool[message.fromUserId.username] = @(sock);
+    }
     
-    
-    
+    //取出消息中的类型
+    ESBMessageType msgType = message.msgType;
+    if (msgType == ESBMessageTypeNormal) {
+        //转发--客户端之间的交互
+        
+        
+    }else if(msgType == ESBMessageTypeGroup){
+        //转发--客户端组内的交互信息
+        
+    }else if(msgType == ESBMessageTypeHeadline){
+        //服务器处理--系统消息
+        
+        
+    }else if(msgType == ESBMessageTypeError){
+        //错误消息
+        
+        
+        
+    }else if(msgType == ESBMessageTypeControl){
+        //控制消息
+        ESBMsgCtlType ctlType = message.ctlType;
+        NSString *logStr = [NSString stringWithFormat:@"%@",message.fromUserId.username];
+        if (ctlType == ESBMsgCtlTypeLogin) {
+            //登录
+            logStr = [logStr stringByAppendingString:@" 发起了登录请求"];
+            [self handleLoginRequest:message];
+            
+        }else if(ctlType == ESBMsgCtlTypeLogout){
+            //退出
+            logStr = [logStr stringByAppendingString:@" 发起了退出请求"];
+            
+            
+            
+            
+        }else{
+            //其他控制消息
+            
+            
+            
+            
+            
+        }
+        
+        
+        //打印日志
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.textView addLogText:logStr];
+        });
+        
+        
+    }else{
+        //其他类型
+        
+        
+    }
 }
 
 
 
-
+#pragma mark - 客户端事件响应
+/**处理登录请求*/
+-(void)handleLoginRequest:(ESBMessageModel *)message
+{
+    //获取用户名密码
+    NSString *username = [message.content valueForKey:@"username"];
+    NSString *password = [message.content valueForKey:@"password"];
+    
+    //构造响应消息
+    ESBMessageModel *rspMsg = [[ESBMessageModel alloc]init];
+    rspMsg.fromUserId = nil;
+    rspMsg.toUserId = message.fromUserId;
+    rspMsg.msgType = ESBMessageTypeControl;
+    rspMsg.ctlType = ESBMsgCtlTypeLogin;
+    rspMsg.createTime = [[NSDate new] timeIntervalSince1970];
+    NSMutableDictionary *content = [NSMutableDictionary dictionary];
+    
+    //判断
+    if (username.length == 0 || password.length == 0) {
+        //构造出错响应
+        content[@"code"] = @"0";
+        content[@"result"] = @"0";  //失败
+        content[@"reason"] = @"username/password is null";
+        
+    }else{
+        
+        //连接服务器验证
+        
+        
+        //构造成功
+        content[@"code"] = @"0";
+        content[@"result"] = @"1";
+        content[@"reason"] = nil;
+    }
+    
+    rspMsg.content = content;
+    
+    //编码
+    size_t msgLength;
+    void *buffer = [ESBMessageModel encodeMessage:rspMsg length:&msgLength];
+    
+    //成帧发送
+    int clntSock = [[self.clntSockCachePool valueForKey:rspMsg.toUserId.username] intValue];
+    
+    FILE *channel = fdopen(clntSock, "r+");
+    size_t msgSend = FrameLengthSend(buffer, msgLength, channel);
+    if (msgSend != msgLength) {
+        //回主线程，打印错误
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.textView addLogText:@"回复请求异常"];
+        });
+    }else{
+        //回主线程，打印日志
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = [NSString stringWithFormat:@"%@用户登录",rspMsg.toUserId.username];
+            [self.textView addLogText:msg];
+        });
+    }
+    
+}
 
 
 
