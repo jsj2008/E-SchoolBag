@@ -33,6 +33,10 @@
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&error ];
     
+    if (error) {
+        return NULL;
+    }
+    
     //转换
     char *buffer = [jsonData bytes];
     *size = [jsonData length];

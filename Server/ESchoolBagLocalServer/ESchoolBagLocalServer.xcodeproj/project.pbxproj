@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C060074C48B985E761867FD3 /* libPods-ESchoolBagLocalServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D1E8FB0F9855FF8CAA8405 /* libPods-ESchoolBagLocalServer.a */; };
 		F72276861E68F9AF00BF90F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276851E68F9AF00BF90F2 /* main.m */; };
 		F722768B1E68F9AF00BF90F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F722768A1E68F9AF00BF90F2 /* Assets.xcassets */; };
 		F722768E1E68F9AF00BF90F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F722768C1E68F9AF00BF90F2 /* Main.storyboard */; };
@@ -16,12 +17,14 @@
 		F72276CE1E693FBB00BF90F2 /* ESBConnectionSocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276CD1E693FBB00BF90F2 /* ESBConnectionSocketModel.m */; };
 		F72276DF1E69528F00BF90F2 /* ESBDataFramer.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276DD1E69528F00BF90F2 /* ESBDataFramer.m */; };
 		F72276E21E6958FF00BF90F2 /* ESBMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276E11E6958FF00BF90F2 /* ESBMessageModel.m */; };
-		F72276E51E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276E41E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m */; };
-		F72276E81E695E5800BF90F2 /* ESBAuthResponseMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276E71E695E5800BF90F2 /* ESBAuthResponseMessageModel.m */; };
 		F72277021E6CF86900BF90F2 /* ESBDataCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277011E6CF86900BF90F2 /* ESBDataCoder.m */; };
+		F72277081E6D34F000BF90F2 /* ESBClientID.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277071E6D34F000BF90F2 /* ESBClientID.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		376D93E07D979FFCCCA2BE29 /* Pods-ESchoolBagLocalServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESchoolBagLocalServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESchoolBagLocalServer/Pods-ESchoolBagLocalServer.debug.xcconfig"; sourceTree = "<group>"; };
+		748AA0DC6BF44850C56E6EA6 /* Pods-ESchoolBagLocalServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESchoolBagLocalServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESchoolBagLocalServer/Pods-ESchoolBagLocalServer.release.xcconfig"; sourceTree = "<group>"; };
+		C0D1E8FB0F9855FF8CAA8405 /* libPods-ESchoolBagLocalServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ESchoolBagLocalServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F722767E1E68F9AF00BF90F2 /* ESchoolBagLocalServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESchoolBagLocalServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72276851E68F9AF00BF90F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F722768A1E68F9AF00BF90F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,12 +43,10 @@
 		F72276DE1E69528F00BF90F2 /* ESBDataFramer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataFramer.h; sourceTree = "<group>"; };
 		F72276E01E6958FF00BF90F2 /* ESBMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBMessageModel.h; sourceTree = "<group>"; };
 		F72276E11E6958FF00BF90F2 /* ESBMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBMessageModel.m; sourceTree = "<group>"; };
-		F72276E31E695D0E00BF90F2 /* ESBAuthRequestMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBAuthRequestMessageModel.h; sourceTree = "<group>"; };
-		F72276E41E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBAuthRequestMessageModel.m; sourceTree = "<group>"; };
-		F72276E61E695E5800BF90F2 /* ESBAuthResponseMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBAuthResponseMessageModel.h; sourceTree = "<group>"; };
-		F72276E71E695E5800BF90F2 /* ESBAuthResponseMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBAuthResponseMessageModel.m; sourceTree = "<group>"; };
 		F72277001E6CF86900BF90F2 /* ESBDataCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataCoder.h; sourceTree = "<group>"; };
 		F72277011E6CF86900BF90F2 /* ESBDataCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataCoder.m; sourceTree = "<group>"; };
+		F72277061E6D34F000BF90F2 /* ESBClientID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBClientID.h; sourceTree = "<group>"; };
+		F72277071E6D34F000BF90F2 /* ESBClientID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBClientID.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +54,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C060074C48B985E761867FD3 /* libPods-ESchoolBagLocalServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3299FF986124B33C2C66BE3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0D1E8FB0F9855FF8CAA8405 /* libPods-ESchoolBagLocalServer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		701B8E58CB8A902479626A2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				376D93E07D979FFCCCA2BE29 /* Pods-ESchoolBagLocalServer.debug.xcconfig */,
+				748AA0DC6BF44850C56E6EA6 /* Pods-ESchoolBagLocalServer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F72276751E68F9AE00BF90F2 = {
 			isa = PBXGroup;
 			children = (
 				F72276801E68F9AF00BF90F2 /* ESchoolBagLocalServer */,
 				F722767F1E68F9AF00BF90F2 /* Products */,
+				701B8E58CB8A902479626A2D /* Pods */,
+				3299FF986124B33C2C66BE3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,10 +153,8 @@
 				F72276CD1E693FBB00BF90F2 /* ESBConnectionSocketModel.m */,
 				F72276E01E6958FF00BF90F2 /* ESBMessageModel.h */,
 				F72276E11E6958FF00BF90F2 /* ESBMessageModel.m */,
-				F72276E31E695D0E00BF90F2 /* ESBAuthRequestMessageModel.h */,
-				F72276E41E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m */,
-				F72276E61E695E5800BF90F2 /* ESBAuthResponseMessageModel.h */,
-				F72276E71E695E5800BF90F2 /* ESBAuthResponseMessageModel.m */,
+				F72277061E6D34F000BF90F2 /* ESBClientID.h */,
+				F72277071E6D34F000BF90F2 /* ESBClientID.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F72276921E68F9AF00BF90F2 /* Build configuration list for PBXNativeTarget "ESchoolBagLocalServer" */;
 			buildPhases = (
+				A609A832094879D773EB6B3B /* [CP] Check Pods Manifest.lock */,
 				F722767A1E68F9AF00BF90F2 /* Sources */,
 				F722767B1E68F9AF00BF90F2 /* Frameworks */,
 				F722767C1E68F9AF00BF90F2 /* Resources */,
+				9CE16B8617791671784B8E2F /* [CP] Embed Pods Frameworks */,
+				99D69563788C5C4033F513C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +290,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		99D69563788C5C4033F513C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ESchoolBagLocalServer/Pods-ESchoolBagLocalServer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CE16B8617791671784B8E2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ESchoolBagLocalServer/Pods-ESchoolBagLocalServer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A609A832094879D773EB6B3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F722767A1E68F9AF00BF90F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -275,14 +345,13 @@
 			files = (
 				F72276A31E68FAD700BF90F2 /* ESBHomeViewController.m in Sources */,
 				F72276DF1E69528F00BF90F2 /* ESBDataFramer.m in Sources */,
-				F72276E51E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m in Sources */,
 				F72276861E68F9AF00BF90F2 /* main.m in Sources */,
 				F72277021E6CF86900BF90F2 /* ESBDataCoder.m in Sources */,
 				F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */,
 				F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */,
 				F72276E21E6958FF00BF90F2 /* ESBMessageModel.m in Sources */,
-				F72276E81E695E5800BF90F2 /* ESBAuthResponseMessageModel.m in Sources */,
 				F72276CE1E693FBB00BF90F2 /* ESBConnectionSocketModel.m in Sources */,
+				F72277081E6D34F000BF90F2 /* ESBClientID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +458,7 @@
 		};
 		F72276931E68F9AF00BF90F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 376D93E07D979FFCCCA2BE29 /* Pods-ESchoolBagLocalServer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -403,6 +473,7 @@
 		};
 		F72276941E68F9AF00BF90F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 748AA0DC6BF44850C56E6EA6 /* Pods-ESchoolBagLocalServer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

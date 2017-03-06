@@ -13,5 +13,6 @@
 @property(nonatomic,assign) int conectSocket;
 /**处理当前连接的线程*/
 @property(nonatomic,strong) NSThread *handleThread;
+/**当前连接的客户端ID*/
 
 @end

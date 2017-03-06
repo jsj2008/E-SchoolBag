@@ -18,7 +18,7 @@
 
 #import "ESBDataFramer.h"
 #import "ESBDataCoder.h"
-
+#import "ESBMessageModel.h"
 
 
 
@@ -217,7 +217,6 @@
         }
         
         //循环接收客户端的数据
-        int mSize;
         char inBuf[ESBBufferLength];    //用来存储接收到的二进制数据
         while (1) {
 
@@ -228,10 +227,10 @@
             if (recvBytes == -1) {
                 break;
             }
-            NSDictionary *dictionary = [ESBDataCoder jsonDataWithBuffer:inBuf length:recvBytes];
+            ESBMessageModel *message = [ESBMessageModel decodeMessageWithBuffer:inBuf length:recvBytes];
             
             //响应客户的数据
-            [self responseClientDataWithDict:dictionary];
+            [self responseClientDataWithMessage:message];
 
         }
         
@@ -250,9 +249,9 @@
 
 #pragma mark - 数据处理相关
 /**响应客户端数据*/
-- (void)responseClientDataWithDict:(NSDictionary *)dict
+- (void)responseClientDataWithMessage:(ESBMessageModel *)message
 {
-    
+    NSLog(@"%@",[message description]);
     
     
     
