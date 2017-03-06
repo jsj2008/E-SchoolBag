@@ -18,6 +18,7 @@
 		F72276E21E6958FF00BF90F2 /* ESBMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276E11E6958FF00BF90F2 /* ESBMessageModel.m */; };
 		F72276E51E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276E41E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m */; };
 		F72276E81E695E5800BF90F2 /* ESBAuthResponseMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276E71E695E5800BF90F2 /* ESBAuthResponseMessageModel.m */; };
+		F72277021E6CF86900BF90F2 /* ESBDataCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277011E6CF86900BF90F2 /* ESBDataCoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		F72276E41E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBAuthRequestMessageModel.m; sourceTree = "<group>"; };
 		F72276E61E695E5800BF90F2 /* ESBAuthResponseMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBAuthResponseMessageModel.h; sourceTree = "<group>"; };
 		F72276E71E695E5800BF90F2 /* ESBAuthResponseMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBAuthResponseMessageModel.m; sourceTree = "<group>"; };
+		F72277001E6CF86900BF90F2 /* ESBDataCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataCoder.h; sourceTree = "<group>"; };
+		F72277011E6CF86900BF90F2 /* ESBDataCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataCoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 			children = (
 				F72276DD1E69528F00BF90F2 /* ESBDataFramer.m */,
 				F72276DE1E69528F00BF90F2 /* ESBDataFramer.h */,
+				F72277001E6CF86900BF90F2 /* ESBDataCoder.h */,
+				F72277011E6CF86900BF90F2 /* ESBDataCoder.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				F72276DF1E69528F00BF90F2 /* ESBDataFramer.m in Sources */,
 				F72276E51E695D0E00BF90F2 /* ESBAuthRequestMessageModel.m in Sources */,
 				F72276861E68F9AF00BF90F2 /* main.m in Sources */,
+				F72277021E6CF86900BF90F2 /* ESBDataCoder.m in Sources */,
 				F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */,
 				F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */,
 				F72276E21E6958FF00BF90F2 /* ESBMessageModel.m in Sources */,

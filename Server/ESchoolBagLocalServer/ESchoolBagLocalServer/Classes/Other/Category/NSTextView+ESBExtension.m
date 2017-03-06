@@ -28,6 +28,11 @@
     logStr = [logStr stringByAppendingString:@"\n"];
     
     [self addString:logStr];
+    
+    //滚动textView到最下面
+    NSRange range;
+    range = NSMakeRange ([[self string] length], 0);
+    [self scrollRangeToVisible: range];
 }
 
 - (void)dieLogWithText:(NSString *)logStr

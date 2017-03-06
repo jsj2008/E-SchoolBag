@@ -9,6 +9,13 @@
 #import "AppDelegate.h"
 #import "ESBLoginViewController.h"
 
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <string.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <netinet/in.h>
+
 @interface AppDelegate ()
 
 @end
@@ -25,7 +32,7 @@
     self.window = window;
     [self.window makeKeyAndVisible];
     
-    
+    [self connectionToHost];
     
     return YES;
 }
@@ -56,6 +63,49 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
+
+#pragma mark - socket相关
+-(void)connectionToHost
+{
+    //告诉系统我们需要哪种类型的地址
+    struct addrinfo addrCritral;
+    memset(&addrCritral, 0, sizeof(addrCritral));
+    addrCritral.ai_family = AF_UNSPEC;
+    addrCritral.ai_protocol = IPPROTO_TCP;
+    addrCritral.ai_socktype = SOCK_STREAM;
+    
+    //解析服务器地址信息
+    struct addrinfo *servAddr;
+    int rtnVal = getaddrinfo(ESBSeverAddress, ESBServerMainPort, &addrCritral, &servAddr);
+    if (rtnVal != 0) {
+        //[SVProgressHUD showErrorWithStatus:@"getaddrinfo() failed"];
+        return;
+    }
+    
+    //创建客户端套接字
+    int clntSock = socket(servAddr->ai_family, servAddr->ai_socktype, servAddr->ai_protocol);
+    if (clntSock < 0 ) {
+        //[SVProgressHUD showErrorWithStatus:@"socket() failed"];
+        return;
+    }
+    
+    //连接服务器
+    if (connect(clntSock, servAddr->ai_addr, servAddr->ai_addrlen) < 0) {
+        //[SVProgressHUD showErrorWithStatus:@"connect() failed"];
+    }
+    
+    self.clntSock = clntSock;
+}
+
+
+
+
+
+
+
 
 
 @end

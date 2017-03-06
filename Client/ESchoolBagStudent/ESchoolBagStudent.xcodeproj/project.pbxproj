@@ -16,6 +16,8 @@
 		F72276BF1E690D4500BF90F2 /* ESBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276BE1E690D4500BF90F2 /* ESBLoginViewController.m */; };
 		F72276C51E690DA100BF90F2 /* ESBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276C41E690DA100BF90F2 /* ESBTabViewController.m */; };
 		F72276C71E690F0200BF90F2 /* ESBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72276C61E690F0200BF90F2 /* ESBLoginViewController.xib */; };
+		F72276FF1E6CF2B000BF90F2 /* ESBDataFramer.m in Sources */ = {isa = PBXBuildFile; fileRef = F72276FE1E6CF2B000BF90F2 /* ESBDataFramer.m */; };
+		F72277051E6CFBC500BF90F2 /* ESBDataCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277041E6CFBC500BF90F2 /* ESBDataCoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		F72276C41E690DA100BF90F2 /* ESBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBTabViewController.m; sourceTree = "<group>"; };
 		F72276C61E690F0200BF90F2 /* ESBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESBLoginViewController.xib; sourceTree = "<group>"; };
 		F72276C81E69114500BF90F2 /* ESchoolBagStudent.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESchoolBagStudent.pch; sourceTree = "<group>"; };
+		F72276FD1E6CF2B000BF90F2 /* ESBDataFramer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataFramer.h; sourceTree = "<group>"; };
+		F72276FE1E6CF2B000BF90F2 /* ESBDataFramer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataFramer.m; sourceTree = "<group>"; };
+		F72277031E6CFBC500BF90F2 /* ESBDataCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBDataCoder.h; sourceTree = "<group>"; };
+		F72277041E6CFBC500BF90F2 /* ESBDataCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataCoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 		F72276B31E690C7D00BF90F2 /* MyTool */ = {
 			isa = PBXGroup;
 			children = (
+				F72276FC1E6CF2A000BF90F2 /* Socket */,
 			);
 			path = MyTool;
 			sourceTree = "<group>";
@@ -249,6 +256,17 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F72276FC1E6CF2A000BF90F2 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				F72277031E6CFBC500BF90F2 /* ESBDataCoder.h */,
+				F72277041E6CFBC500BF90F2 /* ESBDataCoder.m */,
+				F72276FD1E6CF2B000BF90F2 /* ESBDataFramer.h */,
+				F72276FE1E6CF2B000BF90F2 /* ESBDataFramer.m */,
+			);
+			path = Socket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,7 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F72276B51E690C7D00BF90F2 /* AppDelegate.m in Sources */,
+				F72276FF1E6CF2B000BF90F2 /* ESBDataFramer.m in Sources */,
 				F72276C51E690DA100BF90F2 /* ESBTabViewController.m in Sources */,
+				F72277051E6CFBC500BF90F2 /* ESBDataCoder.m in Sources */,
 				F72276BF1E690D4500BF90F2 /* ESBLoginViewController.m in Sources */,
 				F72276B81E690D1500BF90F2 /* ESBHomeViewController.m in Sources */,
 				F72276171E67C92000BF90F2 /* main.m in Sources */,

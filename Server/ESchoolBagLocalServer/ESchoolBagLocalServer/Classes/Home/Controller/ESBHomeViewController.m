@@ -17,6 +17,7 @@
 #include <netdb.h>
 
 #import "ESBDataFramer.h"
+#import "ESBDataCoder.h"
 
 
 
@@ -218,23 +219,20 @@
         //循环接收客户端的数据
         int mSize;
         char inBuf[ESBBufferLength];    //用来存储接收到的二进制数据
-        
-        
         while (1) {
+
+            //从指定流中读取数据，并成帧
+            size_t recvBytes = FrameLengthRecv(channel, inBuf, ESBBufferLength);
             
-            char buffer[10000];
+            //解码
+            if (recvBytes == -1) {
+                break;
+            }
+            NSDictionary *dictionary = [ESBDataCoder jsonDataWithBuffer:inBuf length:recvBytes];
             
-            //接收
-            size_t recvLength = recv(clntSock, buffer, 10000, 0);
-            
-            NSData *data = [NSData dataWithBytes:buffer length:recvLength];
-            
-            NSError *error;
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-            
-            NSLog(@"%@",[dict description]);
-         
-            
+            //响应客户的数据
+            [self responseClientDataWithDict:dictionary];
+
         }
         
         //客户端主动退出
@@ -250,7 +248,15 @@
 
 
 
-
+#pragma mark - 数据处理相关
+/**响应客户端数据*/
+- (void)responseClientDataWithDict:(NSDictionary *)dict
+{
+    
+    
+    
+    
+}
 
 
 
