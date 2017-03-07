@@ -6,6 +6,7 @@ target 'ESchoolBagLocalServer' do
   # use_frameworks!
 	
 	pod 'MJExtension', '~> 3.0.13'
+  	pod 'AFNetworking', '~> 3.1.0'
 
   # Pods for ESchoolBagLocalServer
 

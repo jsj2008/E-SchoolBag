@@ -11,7 +11,7 @@
 
 /**消息类型*/
 typedef NS_ENUM(NSInteger,ESBMessageType){
-    ESBMessageTypeNromal = 0,       //表示客户端之间交互的信息
+    ESBMessageTypeNormal = 0,       //表示客户端之间交互的信息
     ESBMessageTypeGroup = 1,        //表示多个客户端组交互的信息
     ESBMessageTypeHeadline = 2,     //表示系统消息，系统通知、警告、实时数据更新
     ESBMessageTypeError = 3,        //表示错误消息，可以是服务器发送给客户端的，也可以是客户端回发给客户端的
