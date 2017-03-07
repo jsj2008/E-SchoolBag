@@ -20,6 +20,7 @@
 		F72277291E6E804600BF90F2 /* ESBDataCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277231E6E804600BF90F2 /* ESBDataCoder.m */; };
 		F722772A1E6E804600BF90F2 /* ESBDataFramer.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277251E6E804600BF90F2 /* ESBDataFramer.m */; };
 		F722772B1E6E804600BF90F2 /* ESBMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277271E6E804600BF90F2 /* ESBMessageModel.m */; };
+		F722772F1E6E81C600BF90F2 /* CMNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = F722772E1E6E81C600BF90F2 /* CMNetwork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		F72277251E6E804600BF90F2 /* ESBDataFramer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataFramer.m; sourceTree = "<group>"; };
 		F72277261E6E804600BF90F2 /* ESBMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBMessageModel.h; sourceTree = "<group>"; };
 		F72277271E6E804600BF90F2 /* ESBMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBMessageModel.m; sourceTree = "<group>"; };
+		F722772D1E6E81C600BF90F2 /* CMNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNetwork.h; sourceTree = "<group>"; };
+		F722772E1E6E81C600BF90F2 /* CMNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNetwork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +240,8 @@
 		F722772C1E6E809C00BF90F2 /* CMNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				F722772D1E6E81C600BF90F2 /* CMNetwork.h */,
+				F722772E1E6E81C600BF90F2 /* CMNetwork.m */,
 			);
 			path = CMNetwork;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				F72276A31E68FAD700BF90F2 /* ESBHomeViewController.m in Sources */,
 				F72276861E68F9AF00BF90F2 /* main.m in Sources */,
 				F72277291E6E804600BF90F2 /* ESBDataCoder.m in Sources */,
+				F722772F1E6E81C600BF90F2 /* CMNetwork.m in Sources */,
 				F722771E1E6E462F00BF90F2 /* ESBSocketManager.m in Sources */,
 				F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */,
 				F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */,

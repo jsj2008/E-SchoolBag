@@ -10,18 +10,14 @@
 #import "ESBConnectionSocketModel.h"
 
 #include <sys/socket.h>
-#include <sys/types.h>
-#include <string.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-
 
 
 #import "ESBMessageModel.h"
 
 #import "ESBSocketManager.h"
 
+
+#include <AFNetworking.h>
 
 
 
@@ -280,6 +276,18 @@
     }else{
         
         //连接服务器验证
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        
+        
+        
+        [manager POST:@"http://www.baidu.com" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            NSLog(@"%@",responseObject);
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@",error);
+        }];
+        
         
         
         //构造成功

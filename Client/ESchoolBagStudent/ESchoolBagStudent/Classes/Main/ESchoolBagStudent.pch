@@ -16,6 +16,7 @@
 
 #pragma mark - Socket相关
 /**服务地址*/
-#define ESBSeverAddress "127.0.0.1"
+//#define ESBSeverAddress "127.0.0.1"
+#define ESBSeverAddress "192.168.32.23"
 /**服务器主监听端口号*/
 #define ESBServerMainPort "5700"
