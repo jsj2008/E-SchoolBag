@@ -19,6 +19,7 @@
 		F72277191E6D4AE800BF90F2 /* ESBDataCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277131E6D4AE800BF90F2 /* ESBDataCoder.m */; };
 		F722771A1E6D4AE800BF90F2 /* ESBDataFramer.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277151E6D4AE800BF90F2 /* ESBDataFramer.m */; };
 		F722771B1E6D4AE800BF90F2 /* ESBMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F72277171E6D4AE800BF90F2 /* ESBMessageModel.m */; };
+		F722771E1E6E462F00BF90F2 /* ESBSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F722771D1E6E462F00BF90F2 /* ESBSocketManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		F72277151E6D4AE800BF90F2 /* ESBDataFramer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBDataFramer.m; sourceTree = "<group>"; };
 		F72277161E6D4AE800BF90F2 /* ESBMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBMessageModel.h; sourceTree = "<group>"; };
 		F72277171E6D4AE800BF90F2 /* ESBMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBMessageModel.m; sourceTree = "<group>"; };
+		F722771C1E6E462F00BF90F2 /* ESBSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBSocketManager.h; sourceTree = "<group>"; };
+		F722771D1E6E462F00BF90F2 /* ESBSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBSocketManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 		F72276D31E694CDE00BF90F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F722771C1E6E462F00BF90F2 /* ESBSocketManager.h */,
+				F722771D1E6E462F00BF90F2 /* ESBSocketManager.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				F72276861E68F9AF00BF90F2 /* main.m in Sources */,
 				F72277181E6D4AE800BF90F2 /* ESBClientID.m in Sources */,
 				F722771A1E6D4AE800BF90F2 /* ESBDataFramer.m in Sources */,
+				F722771E1E6E462F00BF90F2 /* ESBSocketManager.m in Sources */,
 				F72277191E6D4AE800BF90F2 /* ESBDataCoder.m in Sources */,
 				F72276A41E68FAD700BF90F2 /* AppDelegate.m in Sources */,
 				F72276A71E6901C500BF90F2 /* NSTextView+ESBExtension.m in Sources */,

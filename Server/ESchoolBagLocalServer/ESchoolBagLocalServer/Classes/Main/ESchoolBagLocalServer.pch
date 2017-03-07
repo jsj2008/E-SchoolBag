@@ -19,6 +19,9 @@
 #import "NSTextView+ESBExtension.h"
 
 
+#pragma mark - 其他
+/**弱引用*/
+#define ESBWeakSelf __weak typeof(self) weakSelf = self
 
 
 #pragma mark - Socket相关

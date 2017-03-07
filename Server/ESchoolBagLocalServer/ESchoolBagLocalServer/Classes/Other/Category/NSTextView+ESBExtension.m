@@ -24,7 +24,7 @@
     NSString *dateStr = [formatter stringFromDate:now];
     
     dateStr = [dateStr stringByAppendingString:@" : "];
-    logStr = [dateStr stringByAppendingString:logStr];
+    logStr = [NSString stringWithFormat:@"%@%@",dateStr,logStr];
     logStr = [logStr stringByAppendingString:@"\n"];
     
     [self addString:logStr];

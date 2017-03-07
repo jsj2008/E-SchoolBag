@@ -16,9 +16,11 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
-#import "ESBDataFramer.h"
-#import "ESBDataCoder.h"
+
+
 #import "ESBMessageModel.h"
+
+#import "ESBSocketManager.h"
 
 
 
@@ -28,42 +30,15 @@
 #pragma mark - 控件相关属性
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 
-#pragma mark - 线程相关属性
-/**主监听线程*/
-@property(nonatomic,strong) NSThread *listenThread;
-/**客户端连接列表*/
-@property(nonatomic,strong) NSMutableArray *connectionList;
 
-
-#pragma mark - 当前客户端和对应的socket缓存池
-@property(nonatomic,strong) NSMutableDictionary *clntSockCachePool;
 
 @end
 
 
 @implementation ESBHomeViewController
-{
-#pragma mark - socket成员变量
-    int _servSock;
-    
-}
+
 
 #pragma mark - 懒加载
-- (NSMutableArray *)connectionList
-{
-    if (_connectionList == nil) {
-        _connectionList = [NSMutableArray array];
-    }
-    return _connectionList;
-}
-
-- (NSMutableDictionary *)clntSockCachePool
-{
-    if (_clntSockCachePool == nil) {
-        _clntSockCachePool = [NSMutableDictionary dictionary];
-    }
-    return _clntSockCachePool;
-}
 
 
 #pragma mark - 系统回调方法
@@ -93,7 +68,7 @@
 - (void)initialSystem
 {
     //初始化成员变量
-    _servSock = -1;
+    [ESBSocketManager shareManager].servSock = -1;
     
     //初始化日志
     [self.textView addLogText:@"程序开始启动"];
@@ -104,53 +79,24 @@
 /**监听主端口*/
 - (void)listenMainPort
 {
-    //告诉系统我们需要哪种类型的地址
-    struct addrinfo addrCritrial;
-    memset(&addrCritrial, 0, sizeof(addrCritrial));
-    addrCritrial.ai_family = AF_UNSPEC;
-    addrCritrial.ai_protocol = IPPROTO_TCP;
-    addrCritrial.ai_socktype = SOCK_STREAM;
-    addrCritrial.ai_flags = AI_PASSIVE;
+    ESBWeakSelf;
+    [[ESBSocketManager shareManager] listenMainPort:ESBListenMainPort result:^(BOOL success) {
+        
+        if (!success) {
+            [weakSelf.textView dieLogWithText:@"监听失败，服务结束"];
+            return;
+        }
+        [weakSelf.textView addLogText:@"服务器准备就绪，等待客户端的连接..."];
+        
+        //开启常驻子线程，用于接收客户端的连接
+        [weakSelf acceptClientConnection];
+        
+    } log:^(NSString *logStr) {
+       
+        [weakSelf.textView addLogText:logStr];
+        
+    }];
     
-    //获取服务器相关信息
-    struct addrinfo *servAddr;
-    int rtnVal = getaddrinfo(NULL, ESBListenMainPort, &addrCritrial, &servAddr);
-    if (rtnVal != 0) {
-        NSString *error = [NSString stringWithFormat:@"getaddrinfo() error -- %s",gai_strerror(rtnVal)];
-        [self.textView dieLogWithText:error];
-        return;
-    }
-    
-    //创建服务器套接字
-    int servSock = socket(servAddr->ai_family, servAddr->ai_socktype, servAddr->ai_protocol);
-    if (servSock < 0) {
-        [self.textView dieLogWithText:@"socket() failed"];
-        return;
-    }
-    [self.textView addLogText:@"socket() success"];
-    
-    //绑定服务器套接字
-    if (bind(servSock, servAddr->ai_addr, servAddr->ai_addrlen) < 0) {
-        [self.textView dieLogWithText:@"bind() failed"];
-        return;
-    }
-    [self.textView addLogText:@"bind() success"];
-    
-    //listen
-    if (listen(servSock, ESBListenMainQueueCount) < 0) {
-       [self.textView dieLogWithText:@"listen() failed"];
-        return;
-    }
-    [self.textView addLogText:@"listen() success"];
-    
-    //保存当前的服务器的监听套接字
-    _servSock = servSock;
-    
-    //释放资源
-    freeaddrinfo(servAddr);
-    
-    //开启常驻子线程，用于接收客户端的连接
-    [self acceptClientConnection];
 }
 
 /**开启子线程，用于接收客户端的连接*/
@@ -160,45 +106,37 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
     
         //保存当前的主监听线程
-        self.listenThread = [NSThread currentThread];
+        [ESBSocketManager shareManager].listenThread = [NSThread currentThread];
         
-        //接收客户端的连接
-        while (1) {
-            //--1 客户端信息
-            struct sockaddr_storage clntAddr;
-            socklen_t clntAddrLen = sizeof(clntAddr);
-            //--2 接收连接
-            int clntSock = accept(_servSock, (struct sockaddr *)&clntAddr, &clntAddrLen);
-            if (clntSock < 0) {
+        //循环接收客户端的连接
+        ESBWeakSelf;
+        [[ESBSocketManager shareManager] acceptClientConnectionWithHandle:^(int clntSock, struct sockaddr_storage clntAddr, socklen_t clntAddrLen) {
+            
+            //解析并打印客户端信息
+            [[ESBSocketManager shareManager] parseAddressWithSockAddr:clntAddr result:^(BOOL success, BOOL ipv4, NSString *clintIP, in_port_t port) {
+                
                 //回主线程，打印日志
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.textView addLogText:@"客户端连接失败"];
+                    if (success) {
+                        NSString *logStr = [NSString stringWithFormat:@"%@ 协议族连接接入 IP地址:%@ 端口号:%d",ipv4?@"IPV4":@"IPV6",clintIP, port];
+                        [weakSelf.textView addLogText:logStr];
+                    }else{
+                        [weakSelf.textView addLogText:@"未知协议族连接接入"];
+                    }
                 });
-                continue;
-            }
-            //--3 打印客户端信息
+                
+            }];
+            
+            //再次开启子线程处理数据 -- 对应于每个客户端的处理线程
+            [weakSelf handleClientDataWithSock:clntSock];
+            
+        } log:^(NSString *logStr) {
+            //回主线程，打印日志
             dispatch_async(dispatch_get_main_queue(), ^{
-                //IPV4
-                if (clntAddr.ss_family == AF_INET) {
-                    struct sockaddr_in *clntAddr_in4 = (struct sockaddr_in *)&clntAddr;
-                    const char *printIP = inet_ntoa(clntAddr_in4->sin_addr);
-                    in_port_t port = ntohs(clntAddr_in4->sin_port);
-                    NSString *clintIP = [NSString stringWithUTF8String:printIP];
-                    NSString *message = [NSString stringWithFormat:@"iPv4客户端连接 -- %@:%d",clintIP,port];
-                    [self.textView addLogText:message];
-                }
-                //IPV6
-                else if (clntAddr.ss_family == AF_INET6){
-                    
-                }
-                //Other
-                else{
-                    [self.textView addLogText:@"未知协议族连接接入"];
-                }
+                [weakSelf.textView addLogText:logStr];
             });
-            //--4 开启子线程，处理数据
-            [self handleClientDataWithSock:(int)clntSock];
-        }
+        }];
+        
         
     });
 }
@@ -214,42 +152,29 @@
         
         //加锁，加入线程池
         @synchronized (self) {
-            [self.connectionList addObject:connSock];
+            [[ESBSocketManager shareManager].connectionList addObject:connSock];
         };
         
-        //创建一个输入输出流
-        FILE *channel = fdopen(clntSock, "r+");
-        if (channel == nil) {
-            //回主线程打印日志信息
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSString *message = [NSString stringWithFormat:@"socket id = %d 创建file流失败 fdopen() failed",clntSock];
-                [self.textView addLogText:message];
-            });
-            return;
-        }
         
         //循环接收客户端的数据
-        char inBuf[ESBBufferLength];    //用来存储接收到的二进制数据
-        while (1) {
-
-            //从指定流中读取数据，并成帧
-            size_t recvBytes = FrameLengthRecv(channel, inBuf, ESBBufferLength);
-            
-            //解码
-            if (recvBytes == -1) {
-                break;
-            }
-            ESBMessageModel *message = [ESBMessageModel decodeMessageWithBuffer:inBuf length:recvBytes];
+        ESBWeakSelf;
+        [[ESBSocketManager shareManager] receivedMessageFromSocket:clntSock result:^(ESBMessageModel *message) {
             
             //解析消息
-            [self parseMessage:message withSock:clntSock];
-
-        }
+            [weakSelf parseMessage:message withSock:clntSock];
+            
+        } log:^(NSString *logStr) {
+            //回主线程打印日志
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.textView addLogText:logStr];
+            });
+        }];
         
+              
         //客户端主动退出
         //--1 移除连接列表
         @synchronized (self) {
-            [self.connectionList removeObject:connSock];
+            [[ESBSocketManager shareManager].connectionList removeObject:connSock];
         };
         //--2 销毁
         close(clntSock);
@@ -265,7 +190,8 @@
 {
     //取出客户端ID
     @synchronized (self) {
-        self.clntSockCachePool[message.fromUserId.username] = @(sock);
+        //self.clntSockCachePool[message.fromUserId.username] = @(sock);
+        [ESBSocketManager shareManager].clntSockCachePool[message.fromUserId.username] = @(sock);
     }
     
     //取出消息中的类型
@@ -364,27 +290,16 @@
     
     rspMsg.content = content;
     
-    //编码
-    size_t msgLength;
-    void *buffer = [ESBMessageModel encodeMessage:rspMsg length:&msgLength];
-    
-    //成帧发送
-    int clntSock = [[self.clntSockCachePool valueForKey:rspMsg.toUserId.username] intValue];
-    
-    FILE *channel = fdopen(clntSock, "r+");
-    size_t msgSend = FrameLengthSend(buffer, msgLength, channel);
-    if (msgSend != msgLength) {
-        //回主线程，打印错误
+    //响应消息
+    ESBWeakSelf;
+    int clntSock = [[[ESBSocketManager shareManager].clntSockCachePool valueForKey:rspMsg.toUserId.username] intValue];
+    [[ESBSocketManager shareManager] sendMessageToSocket:clntSock message:rspMsg result:^(BOOL success, NSString *errLog) {
+        //回主线程打印日志
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.textView addLogText:@"回复请求异常"];
+            NSString *msg = [NSString stringWithFormat:@"%@ 用户登录",rspMsg.toUserId.username];
+            [weakSelf.textView addLogText:success?msg:errLog];
         });
-    }else{
-        //回主线程，打印日志
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *msg = [NSString stringWithFormat:@"%@用户登录",rspMsg.toUserId.username];
-            [self.textView addLogText:msg];
-        });
-    }
+    }];
     
 }
 
